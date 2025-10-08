@@ -5,6 +5,7 @@ class User:
         self.last_name = last_name
         self.login_attempts = 0
 
+
     def describe_user(self):
         print(f"The user's name is {self.first_name} {self.last_name}")
 
@@ -18,13 +19,29 @@ class User:
     def reset_login_attempts(self):
         self.login_attempts = 0
         print(f"Reset login_attempts ;login_attempts = {self.login_attempts}")
+    
+
+
 
 new_user = User("Lee", 'ZF')
 new_user.describe_user()
 new_user.greet_user()
 new_user.increment_login_attempts()
 new_user.increment_login_attempts()
-new_user.increment_login_attempts()
 
 new_user.reset_login_attempts()
+
+class Admin(User):
+    def __init__(self, first_name, last_name):
+        super().__init__(first_name, last_name)
+        self.privileges = ["- can add post", "- can delete post", "- can ban user"]
+
+    def show_privileges(self):
+        print("Your Privileges:")
+        for privilege in self.privileges:
+            print(privilege)
+
+admin = Admin("John", "Doe")
+admin.greet_user()
+admin.show_privileges()
 

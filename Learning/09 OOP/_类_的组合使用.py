@@ -39,6 +39,14 @@ class Battery:
         """打印一条描述电瓶容量的消息"""
         print(f"This car has a {self.battery_size}-kWh battery.")
 
+    def get_range(self):
+        """打印一条消息，指出电动汽车的行驶范围"""
+        if self.battery_size == 40:
+            range = 240
+        elif self.battery_size == 65:
+            range = 225
+        print(f"This car can go about {range} miles on a full charge.")
+
 
 class ElectricCar(Car):
     def __init__(self, make, model, year):
@@ -50,12 +58,7 @@ class ElectricCar(Car):
         下面一行代码等于声明了以上内容
         """
         super().__init__(make, model, year)
-        self.battery_size = 40
-        
-
-    def describe_battery(self):
-        """打印一条描述电瓶容量的消息"""
-        print(f"This car has a {self.battery_size}-kWh battery.")
+        self.battery = Battery()
 
     # 重写父类方法
     def update_odometer(self, mileage):
@@ -64,7 +67,9 @@ class ElectricCar(Car):
 
 my_leaf = ElectricCar('nissan','leaf',2024)
 print(my_leaf.get_descriptive_name())
-my_leaf.describe_battery()
+my_leaf.battery.describe_battery() # 在这里就要调用子类的子类的属性
+my_leaf.battery.get_range() 
+
 
 
 
