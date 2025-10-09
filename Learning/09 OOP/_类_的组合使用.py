@@ -64,12 +64,12 @@ class ElectricCar(Car):
     def update_odometer(self, mileage):
         """电动汽车里程表读书只能增加"""
         """实际意思是在子类中重新定义父类方法"""
-
+""" 
 my_leaf = ElectricCar('nissan','leaf',2024)
 print(my_leaf.get_descriptive_name())
 my_leaf.battery.describe_battery() # 在这里就要调用子类的子类的属性
 my_leaf.battery.get_range() 
-
+ """
 
 
 

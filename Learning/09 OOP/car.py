@@ -19,7 +19,7 @@ class Car:
     def update_odometer(self,mileage):
         """将里程表读书设置为指定的值"""
         self.odometer_reading = mileage
-
+""" 
 my_new_car = Car('audi','a4',2025)
 my_new_car.odometer_reading = 25
 
@@ -28,3 +28,4 @@ my_new_car.read_odometer()
 
 my_new_car.update_odometer(23)
 my_new_car.read_odometer
+"""
