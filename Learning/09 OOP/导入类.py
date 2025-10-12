@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 # 每个类可以单独成立一个文件，作为类导入
 # 以本文件夹内的car.py为例
 from car import Car 
@@ -15,4 +16,16 @@ print(my_leaf.get_descriptive_name())
 my_leaf.battery.describe_battery() # 在这里就要调用子类的子类的属性
 my_leaf.battery.get_range() 
 
+=======
+from pathlib import Path
+import json
+
+username = input("Enter your username: ")
+
+path = Path('username.josn')
+contents = json.dumps(username)
+path.write_text(contents)
+
+print(f"We will remember you as {username}")
+>>>>>>> Stashed changes
 
